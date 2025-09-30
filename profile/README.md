@@ -96,7 +96,7 @@
 
   ## 🚀 Quick Start
 
-  ```python
+```python
   from transformers import AutoModelForCausalLM, AutoTokenizer
 
   model = AutoModelForCausalLM.from_pretrained("zenlm/zen-eco-instruct")
@@ -105,6 +105,7 @@
   inputs = tokenizer("Explain quantum computing", return_tensors="pt")
   outputs = model.generate(**inputs, max_length=200)
   print(tokenizer.decode(outputs[0]))
+```
 
   ---
   🏗️ Infrastructure
