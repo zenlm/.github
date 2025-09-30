@@ -74,8 +74,7 @@
   |-------|------|-------------|
   | [**zen-guard**](https://huggingface.co/zenlm/zen-guard) | Classification | Content safety detection |
   | [**zen-guard-gen**](https://huggingface.co/zenlm/zen-guard-gen) | 4B | Safe content generation |
-  | [**zen-guard-stream**](https://huggingface.co/zenlm/zen-guard-stream) | Classification | Real-time
-   safety monitoring |
+  | [**zen-guard-stream**](https://huggingface.co/zenlm/zen-guard-stream) | Classification | Real-time safety monitoring |
 
   ### 🔢 Embeddings
 
