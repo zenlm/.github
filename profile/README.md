@@ -1,12 +1,3 @@
----
-title: Zen LM
-emoji: 🌍
-colorFrom: green
-colorTo: blue
-sdk: static
-pinned: false
----
-  
 # Zen LM 🌍
 
   > **Democratize AI while protecting our planet**
