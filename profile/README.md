@@ -3,7 +3,7 @@
   > **Democratize AI while protecting our planet**
 
   A groundbreaking collaboration between **[Hanzo AI](https://hanzo.ai)** (Techstars-backed,
-  award-winning GenAI lab) and **[Zoo Labs Foundation](https://zoo.ngo)** (501(c)(3) environmental
+  award-winning applied AI/ML/crypto lab) and **[Zoo Labs Foundation](https://zoo.ngo)** (501(c)(3) research focused
   non-profit), eco-friendly AI that runs entirely on your device — no cloud, no subscriptions, no
   surveillance.
 
