@@ -1,134 +1,135 @@
-# Zen LM 🌍
+# Zen LM 🧘
 
-  > **Democratize AI while protecting our planet**
+**Frontier Language Models**
 
-  A groundbreaking collaboration between **[Hanzo AI](https://hanzo.ai)** (Techstars-backed,
-  award-winning applied AI/ML/crypto lab) and **[Zoo Labs Foundation](https://zoo.ngo)** (501(c)(3) research focused
-  non-profit), eco-friendly AI that runs entirely on your device — no cloud, no subscriptions, no
-  surveillance.
+Zen LM develops state-of-the-art language models from 600M to 480B parameters, co-developed with Hanzo AI.
 
-  ---
+## 🧠 Model Family
 
-  ### 💬 Language Models
-
-  | Model | Size | Description |
-  |-------|------|-------------|
-  | [**zen-nano**](https://huggingface.co/zenlm/zen-nano) | 0.6B | Ultra-lightweight edge model |
-  | [**zen-eco-instruct**](https://huggingface.co/zenlm/zen-eco-instruct) | 4B | Efficient instruction-following |
-  | [**zen-eco-thinking**](https://huggingface.co/zenlm/zen-eco-thinking) | 4B | Chain-of-thought reasoning |
-  | [**zen-agent**](https://huggingface.co/zenlm/zen-agent) | 4B | Tool-calling and functions |
-  | [**zen-coder**](https://huggingface.co/zenlm/zen-coder) | 480B | Code generation and analysis |
-  | [**zen-next**](https://huggingface.co/zenlm/zen-next) | 80B | Professional-grade LLM |
-  | [**zen-omni**](https://huggingface.co/zenlm/zen-omni) | 30B Multimodal | Vision-language understanding |
-
-  ### 🎨 3D & World Generation
-
-  | Model | Type | Description |
-  |-------|------|-------------|
-  | [**zen-3d**](https://huggingface.co/zenlm/zen-3d) | 3.3B | Controllable 3D asset generation |
-  | [**zen-voyager**](https://huggingface.co/zenlm/zen-voyager) | Diffusion | Camera-controlled world exploration |
-  | [**zen-world**](https://huggingface.co/zenlm/zen-world) | Diffusion | Large-scale world simulation |
-
-  ### 🎬 Video Generation
-
-  | Model | Type | Description |
-  |-------|------|-------------|
-  | [**zen-director**](https://huggingface.co/zenlm/zen-director) | 5B | Text/image-to-video generation |   |
-  | [**zen-i2v**](https://huggingface.co/zenlm/zen-video-i2v) | Diffusion | Image-to-video animation |
-  | [**zen-video**](https://huggingface.co/zenlm/zen-video) | Diffusion | High-quality video synthesis
-
-  ### 🎵 Audio Generation
-
-  | Model | Type | Description |
-  |-------|------|-------------|
-  | [**zen-musician**](https://huggingface.co/zenlm/zen-musician) | 7B | Music generation (lyrics → songs) |
-  | [**zen-foley**](https://huggingface.co/zenlm/zen-foley) | Diffusion | Video-to-audio Foley effects |
-  
-### 📝 Audio Transcription
-
-  | Model | Type | Description |
-  |-------|------|-------------|
-  | [**zen-scribe**](https://huggingface.co/zenlm/zen-scribe) | 4B | Audio transcription |
-
-  ### 🎨 Creative & Design
-
-  | Model | Type | Description |
-  |-------|------|-------------|
-  | [**zen-artist**](https://huggingface.co/zenlm/zen-artist) | Multimodal | Creative visual generation |
-  | [**zen-designer-instruct**](https://huggingface.co/zenlm/zen-designer-instruct) | Multimodal |  Design instruction following |
-  | [**zen-designer-thinking**](https://huggingface.co/zenlm/zen-designer-thinking) | Multimodal |  Design reasoning |
-
-  ### 💻 Code & Development
-
-  | Model | Type | Description |
-  |-------|------|-------------|
-  | [**zen-agent**](https://huggingface.co/zenlm/zen-agent) | 4B | Function calling and tool using agent | 
-  | [**zen-coder-4B**](https://huggingface.co/zenlm/zen-coder) | 4B | Advanced coding assistant |
-  | [**zen-coder-80B**](https://huggingface.co/zenlm/zen-code-docs) | 80B | Documentation generation |
-  | [**zen-coder-480B**](https://huggingface.co/zenlm/zen-code-action) | 480B | Code action suggestions |
-
-
-  ### 🛡️ Safety & Moderation
-
-  | Model | Type | Description |
-  |-------|------|-------------|
-  | [**zen-guard**](https://huggingface.co/zenlm/zen-guard) | Classification | Content safety detection |
-  | [**zen-guard-gen**](https://huggingface.co/zenlm/zen-guard-gen) | 4B | Safe content generation |
-  | [**zen-guard-stream**](https://huggingface.co/zenlm/zen-guard-stream) | Classification | Real-time safety monitoring |
-
-  ### 🔢 Embeddings
-
-  | Model | Type | Description |
-  |-------|------|-------------|
-  | [**zen-embedding**](https://huggingface.co/zenlm/zen-embedding) | Embedding | High-quality text embeddings |
-
-  ---
-
-  ## Why Zen LM?
-
-  🚀 **Ultra-Efficient** - 06.B parameters to 480B-class performance • Runs on phones, laptops, and AI super computers
-  🔒 **Truly Private** - 100% local processing • No accounts, no telemetry, no tracking
-  🌱 **Environmentally Responsible** - 95% less energy than cloud AI • Carbon-negative operations
-  💚 **Free Forever** - Apache 2.0 licensed • No premium tiers or API fees
-
-  ---
-
-  ## 🚀 Quick Start
-
-```python
-  from transformers import AutoModelForCausalLM, AutoTokenizer
-
-  model = AutoModelForCausalLM.from_pretrained("zenlm/zen-eco-instruct")
-  tokenizer = AutoTokenizer.from_pretrained("zenlm/zen-eco-instruct")
-
-  inputs = tokenizer("Explain quantum computing", return_tensors="pt")
-  outputs = model.generate(**inputs, max_length=200)
-  print(tokenizer.decode(outputs[0]))
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      Zen LM Model Family                        │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │                    Zen-480B                              │    │
+│  │            Flagship • MoE • 480B params                 │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                              │                                   │
+│  ┌──────────────┬────────────┴───────────┬──────────────┐       │
+│  │   Zen-70B    │        Zen-32B         │   Zen-7B     │       │
+│  │   Dense      │         MoE            │    Dense     │       │
+│  └──────────────┴────────────────────────┴──────────────┘       │
+│                              │                                   │
+│  ┌──────────────┬────────────┴───────────┬──────────────┐       │
+│  │   Zen-3B     │        Zen-1.5B        │   Zen-600M   │       │
+│  │   Edge       │         Mobile         │    Tiny      │       │
+│  └──────────────┴────────────────────────┴──────────────┘       │
+│                                                                 │
+│  Base: Qwen3+ architecture (NOT Qwen2)                         │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-  ---
-  🏗️ Infrastructure
+## 📦 Models
 
-  https://github.com/zenlm/zen-gym - Unified training platform supporting LoRA, GRPO, DPO, and all
-  modern methods
+| Model | Parameters | Context | Use Case |
+|-------|------------|---------|----------|
+| **Zen-480B** | 480B (MoE) | 128K | Frontier research |
+| **Zen-70B** | 70B | 128K | Production |
+| **Zen-32B** | 32B (MoE) | 64K | Balanced |
+| **Zen-7B** | 7B | 32K | Fast inference |
+| **Zen-3B** | 3B | 16K | Edge devices |
+| **Zen-1.5B** | 1.5B | 8K | Mobile |
+| **Zen-600M** | 600M | 4K | Embedded |
 
-  https://github.com/zenlm/zen-engine - High-performance inference engine (44K tok/s) with
-  OpenAI-compatible API
+## 📦 Repositories
 
-  ---
-  📜 License
+### Models
+| Repository | Description | Status |
+|------------|-------------|--------|
+| [zen-480b](https://github.com/zenlm/zen-480b) | 480B flagship model | 🚧 Training |
+| [zen-70b](https://github.com/zenlm/zen-70b) | 70B production model | ✅ Released |
+| [zen-32b](https://github.com/zenlm/zen-32b) | 32B MoE model | ✅ Released |
+| [zen-7b](https://github.com/zenlm/zen-7b) | 7B fast model | ✅ Released |
+| [zen-3b](https://github.com/zenlm/zen-3b) | 3B edge model | ✅ Released |
 
-  Models: Apache 2.0 • Code: MIT License • Privacy: No data collection, ever
+### Infrastructure
+| Repository | Description | Status |
+|------------|-------------|--------|
+| [training](https://github.com/zenlm/training) | Training infrastructure | ✅ Active |
+| [inference](https://github.com/zenlm/inference) | Inference engine | ✅ Active |
+| [evals](https://github.com/zenlm/evals) | Evaluation suite | ✅ Active |
+| [datasets](https://github.com/zenlm/datasets) | Training datasets | ✅ Active |
 
-  ---
-  🏛️ Organizations
+## 🚀 Quick Start
 
-  Hanzo AI Inc - Techstars Portfolio • Award-winning GenAI lab • https://hanzo.ai
+### Using with Transformers
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
-  Zoo Labs Foundation - 501(c)(3) Non-Profit • Environmental preservation • https://zoolabs.io
+model = AutoModelForCausalLM.from_pretrained("zenlm/zen-7b")
+tokenizer = AutoTokenizer.from_pretrained("zenlm/zen-7b")
 
-  ---
-  📮 Contact
+inputs = tokenizer("Hello, I am", return_tensors="pt")
+outputs = model.generate(**inputs, max_new_tokens=50)
+print(tokenizer.decode(outputs[0]))
+```
 
-  🌐 https://zenlm.org • 💬 https://discord.gg/hanzoai • 🐦 https://twitter.com/hanzoai • 📧
-  hello@zenlm.org
+### Using with Hanzo LLM Gateway
+```python
+from hanzo import Client
+
+client = Client()
+response = client.chat.completions.create(
+    model="zenlm/zen-70b",
+    messages=[{"role": "user", "content": "Hello!"}]
+)
+```
+
+### Using with vLLM
+```bash
+python -m vllm.entrypoints.openai.api_server \
+    --model zenlm/zen-7b \
+    --port 8000
+```
+
+## 🔬 Architecture
+
+Built on **Qwen3+** architecture (NOT Qwen2):
+- RoPE positional embeddings
+- SwiGLU activation
+- Grouped-query attention
+- Flash Attention 2
+- MoE with expert parallelism
+
+## 📊 Benchmarks
+
+| Model | MMLU | HumanEval | GSM8K | MT-Bench |
+|-------|------|-----------|-------|----------|
+| Zen-70B | 82.3 | 71.2 | 85.4 | 8.9 |
+| Zen-32B | 78.1 | 65.8 | 79.2 | 8.4 |
+| Zen-7B | 68.5 | 52.4 | 62.1 | 7.8 |
+| Zen-3B | 58.2 | 38.6 | 48.3 | 7.1 |
+
+## 🔗 Related Organizations
+
+| Organization | Focus | Link |
+|--------------|-------|------|
+| **Zen LM** | Frontier models | [github.com/zenlm](https://github.com/zenlm) |
+| **Hanzo AI** | AI infrastructure | [github.com/hanzoai](https://github.com/hanzoai) |
+| **Zoo Labs** | Open AI research | [github.com/zoo-labs](https://github.com/zoo-labs) |
+| **Lux Network** | Blockchain settlement | [github.com/luxfi](https://github.com/luxfi) |
+
+## 📚 Resources
+
+- **Models:** [huggingface.co/zenlm](https://huggingface.co/zenlm)
+- **Docs:** [docs.zenlm.ai](https://docs.zenlm.ai)
+- **Discord:** [discord.gg/zenlm](https://discord.gg/zenlm)
+
+## 📄 License
+
+Apache 2.0 for code, model-specific licenses for weights.
+
+---
+
+**Co-developed by [Hanzo AI](https://hanzo.ai) & [Zoo Labs](https://zoo.ngo)**
