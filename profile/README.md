@@ -1,108 +1,51 @@
-# Zen LM 🧘
+# Zen LM
 
-**Frontier Language Models**
+Frontier language models from 600M to 480B parameters. Open-weight models optimized for edge devices through cloud-scale deployments, built on Qwen3+ architecture with efficient inference via Rust, MLX, and GGUF.
 
-Zen LM develops state-of-the-art language models from 600M to 480B parameters, co-developed with Hanzo AI.
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-## 🧠 Model Family
+Zen LM develops state-of-the-art language models spanning seven sizes from 600M (embedded) to 480B (frontier research). All models use the Qwen3+ architecture with RoPE embeddings, SwiGLU activation, grouped-query attention, and Flash Attention 2. Available through the Hanzo LLM Gateway, Hugging Face, vLLM, and local inference via MLX/GGUF.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      Zen LM Model Family                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │                    Zen-480B                              │    │
-│  │            Flagship • MoE • 480B params                 │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                              │                                   │
-│  ┌──────────────┬────────────┴───────────┬──────────────┐       │
-│  │   Zen-70B    │        Zen-32B         │   Zen-7B     │       │
-│  │   Dense      │         MoE            │    Dense     │       │
-│  └──────────────┴────────────────────────┴──────────────┘       │
-│                              │                                   │
-│  ┌──────────────┬────────────┴───────────┬──────────────┐       │
-│  │   Zen-3B     │        Zen-1.5B        │   Zen-600M   │       │
-│  │   Edge       │         Mobile         │    Tiny      │       │
-│  └──────────────┴────────────────────────┴──────────────┘       │
-│                                                                 │
-│  Base: Qwen3+ architecture (NOT Qwen2)                         │
-└─────────────────────────────────────────────────────────────────┘
-```
+## Quick Start
 
-## 📦 Models
-
-| Model | Parameters | Context | Use Case |
-|-------|------------|---------|----------|
-| **Zen-480B** | 480B (MoE) | 128K | Frontier research |
-| **Zen-70B** | 70B | 128K | Production |
-| **Zen-32B** | 32B (MoE) | 64K | Balanced |
-| **Zen-7B** | 7B | 32K | Fast inference |
-| **Zen-3B** | 3B | 16K | Edge devices |
-| **Zen-1.5B** | 1.5B | 8K | Mobile |
-| **Zen-600M** | 600M | 4K | Embedded |
-
-## 📦 Repositories
-
-### Models
-| Repository | Description | Status |
-|------------|-------------|--------|
-| [zen-480b](https://github.com/zenlm/zen-480b) | 480B flagship model | 🚧 Training |
-| [zen-70b](https://github.com/zenlm/zen-70b) | 70B production model | ✅ Released |
-| [zen-32b](https://github.com/zenlm/zen-32b) | 32B MoE model | ✅ Released |
-| [zen-7b](https://github.com/zenlm/zen-7b) | 7B fast model | ✅ Released |
-| [zen-3b](https://github.com/zenlm/zen-3b) | 3B edge model | ✅ Released |
-
-### Infrastructure
-| Repository | Description | Status |
-|------------|-------------|--------|
-| [training](https://github.com/zenlm/training) | Training infrastructure | ✅ Active |
-| [inference](https://github.com/zenlm/inference) | Inference engine | ✅ Active |
-| [evals](https://github.com/zenlm/evals) | Evaluation suite | ✅ Active |
-| [datasets](https://github.com/zenlm/datasets) | Training datasets | ✅ Active |
-
-## 🚀 Quick Start
-
-### Using with Transformers
 ```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
-model = AutoModelForCausalLM.from_pretrained("zenlm/zen-7b")
-tokenizer = AutoTokenizer.from_pretrained("zenlm/zen-7b")
-
-inputs = tokenizer("Hello, I am", return_tensors="pt")
-outputs = model.generate(**inputs, max_new_tokens=50)
-print(tokenizer.decode(outputs[0]))
-```
-
-### Using with Hanzo LLM Gateway
-```python
+# Using Hanzo LLM Gateway
 from hanzo import Client
 
 client = Client()
 response = client.chat.completions.create(
-    model="zenlm/zen-70b",
+    model="zenlm/zen-7b",
     messages=[{"role": "user", "content": "Hello!"}]
 )
+
+# Using Transformers
+from transformers import AutoModelForCausalLM, AutoTokenizer
+model = AutoModelForCausalLM.from_pretrained("zenlm/zen-7b")
 ```
 
-### Using with vLLM
-```bash
-python -m vllm.entrypoints.openai.api_server \
-    --model zenlm/zen-7b \
-    --port 8000
-```
+## Model Family
 
-## 🔬 Architecture
+| Model | Parameters | Context | Use Case |
+|-------|------------|---------|----------|
+| Zen-480B | 480B (MoE) | 128K | Frontier research |
+| Zen-70B | 70B | 128K | Production |
+| Zen-32B | 32B (MoE) | 64K | Balanced |
+| Zen-7B | 7B | 32K | Fast inference |
+| Zen-3B | 3B | 16K | Edge devices |
+| Zen-1.5B | 1.5B | 8K | Mobile |
+| Zen-600M | 600M | 4K | Embedded |
 
-Built on **Qwen3+** architecture (NOT Qwen2):
-- RoPE positional embeddings
-- SwiGLU activation
-- Grouped-query attention
-- Flash Attention 2
-- MoE with expert parallelism
+## Core Projects
 
-## 📊 Benchmarks
+| Project | Description |
+|---------|-------------|
+| [zen](https://github.com/zenlm/zen) | Zen AI model family — efficient models for edge and cloud |
+| [engine](https://github.com/zenlm/engine) | High-performance inference engine — Rust/MLX/GGUF |
+| [gym](https://github.com/zenlm/gym) | Unified fine-tuning for 100+ LLMs and VLMs |
+| [zen-omni](https://github.com/zenlm/zen-omni) | Zen-Omni 30B — hypermodal AI with MLX/GGUF |
+| [docs](https://github.com/zenlm/docs) | Documentation and model cards |
+
+## Benchmarks
 
 | Model | MMLU | HumanEval | GSM8K | MT-Bench |
 |-------|------|-----------|-------|----------|
@@ -111,25 +54,20 @@ Built on **Qwen3+** architecture (NOT Qwen2):
 | Zen-7B | 68.5 | 52.4 | 62.1 | 7.8 |
 | Zen-3B | 58.2 | 38.6 | 48.3 | 7.1 |
 
-## 🔗 Related Organizations
+## Related Organizations
 
-| Organization | Focus | Link |
-|--------------|-------|------|
-| **Zen LM** | Frontier models | [github.com/zenlm](https://github.com/zenlm) |
-| **Hanzo AI** | AI infrastructure | [github.com/hanzoai](https://github.com/hanzoai) |
-| **Zoo Labs** | Open AI research | [github.com/zoo-labs](https://github.com/zoo-labs) |
-| **Lux Network** | Blockchain settlement | [github.com/luxfi](https://github.com/luxfi) |
+| Organization | Focus |
+|--------------|-------|
+| [Hanzo AI](https://github.com/hanzoai) | AI infrastructure — LLM gateway, MCP, agents |
+| [Lux Network](https://github.com/luxfi) | Post-quantum blockchain, FHE, cross-chain |
+| [Zoo Labs](https://github.com/zoo-labs) | Open AI research network (501c3) |
 
-## 📚 Resources
+## Resources
 
-- **Models:** [huggingface.co/zenlm](https://huggingface.co/zenlm)
-- **Docs:** [docs.zenlm.ai](https://docs.zenlm.ai)
-- **Discord:** [discord.gg/zenlm](https://discord.gg/zenlm)
-
-## 📄 License
+- [zenlm.org](https://zenlm.org) — Website
+- [huggingface.co/zenlm](https://huggingface.co/zenlm) — Models on Hugging Face
+- [docs.zenlm.ai](https://docs.zenlm.ai) — Documentation
 
 Apache 2.0 for code, model-specific licenses for weights.
 
----
-
-**Co-developed by [Hanzo AI](https://hanzo.ai) & [Zoo Labs](https://zoo.ngo)**
+*Co-developed by [Hanzo AI](https://hanzo.ai) and [Zoo Labs](https://zoo.ngo)*
