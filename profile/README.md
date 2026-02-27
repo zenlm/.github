@@ -1,10 +1,10 @@
 # Zen LM
 
-Frontier language models from 600M to 480B parameters. Open-weight models optimized for edge devices through cloud-scale deployments, built on Qwen3+ architecture with efficient inference via Rust, MLX, and GGUF.
+Frontier language models from 600M to 480B parameters. Open-weight models optimized for edge devices through cloud-scale deployments, built on the Zen architecture with efficient inference via Rust, MLX, and GGUF.
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Zen LM develops state-of-the-art language models spanning seven sizes from 600M (embedded) to 480B (frontier research). All models use the Qwen3+ architecture with RoPE embeddings, SwiGLU activation, grouped-query attention, and Flash Attention 2. Available through the Hanzo LLM Gateway, Hugging Face, vLLM, and local inference via MLX/GGUF.
+Zen LM develops state-of-the-art language models spanning ten modalities from 600M (embedded) to 480B (frontier research). All models use the Zen architecture with RoPE embeddings, SwiGLU activation, grouped-query attention, and Flash Attention 2. Available through the Hanzo LLM Gateway, Hugging Face, vLLM, and local inference via MLX/GGUF.
 
 ## Quick Start
 
@@ -14,26 +14,40 @@ from hanzo import Client
 
 client = Client()
 response = client.chat.completions.create(
-    model="zenlm/zen-7b",
+    model="zenlm/zen4-pro",
     messages=[{"role": "user", "content": "Hello!"}]
 )
 
 # Using Transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
-model = AutoModelForCausalLM.from_pretrained("zenlm/zen-7b")
+model = AutoModelForCausalLM.from_pretrained("zenlm/zen4-pro")
 ```
 
 ## Model Family
 
+### Language Models
+
 | Model | Parameters | Context | Use Case |
 |-------|------------|---------|----------|
-| Zen-480B | 480B (MoE) | 128K | Frontier research |
-| Zen-70B | 70B | 128K | Production |
-| Zen-32B | 32B (MoE) | 64K | Balanced |
-| Zen-7B | 7B | 32K | Fast inference |
-| Zen-3B | 3B | 16K | Edge devices |
-| Zen-1.5B | 1.5B | 8K | Mobile |
-| Zen-600M | 600M | 4K | Embedded |
+| [zen-coder-480b](https://huggingface.co/zenlm/zen-coder-480b-instruct) | 480B (MoE) | 256K | Frontier code |
+| [zen4-max](https://huggingface.co/zenlm/zen4-max) | 397B (MoE) | 128K | Frontier reasoning |
+| [zen-max](https://huggingface.co/zenlm/zen-max) | 235B (MoE) | 128K | Production flagship |
+| [zen4-thinking](https://huggingface.co/zenlm/zen4-thinking) | 80B (MoE) | 128K | Deep reasoning |
+| [zen4-coder-pro](https://huggingface.co/zenlm/zen4-coder-pro) | 80B (MoE) | 128K | Professional code |
+| [zen-voyager](https://huggingface.co/zenlm/zen-voyager) | 32B | 128K | Balanced |
+| [zen4-mini](https://huggingface.co/zenlm/zen4-mini) | 8B | 128K | Fast inference |
+| [zen-eco](https://huggingface.co/zenlm/zen-eco) | 4B | 32K | Edge devices |
+| [zen-nano](https://huggingface.co/zenlm/zen-nano) | 0.6B | 8K | Embedded |
+
+### Multimodal
+
+| Model | Type | Description |
+|-------|------|-------------|
+| [zen-omni](https://huggingface.co/zenlm/zen-omni) | Audio+Vision | Hypermodal 30B MoE |
+| [zen-vl](https://huggingface.co/zenlm/zen-vl-8b-instruct) | Vision | Vision-language models (4B/8B/30B) |
+| [zen-video](https://huggingface.co/zenlm/zen-video) | Video | High-quality video synthesis |
+| [zen-scribe](https://huggingface.co/zenlm/zen-scribe) | Speech | Speech recognition |
+| [zen-translator](https://huggingface.co/zenlm/zen-translator) | Translation | Real-time multimodal translation |
 
 ## Core Projects
 
@@ -44,15 +58,6 @@ model = AutoModelForCausalLM.from_pretrained("zenlm/zen-7b")
 | [gym](https://github.com/zenlm/gym) | Unified fine-tuning for 100+ LLMs and VLMs |
 | [zen-omni](https://github.com/zenlm/zen-omni) | Zen-Omni 30B — hypermodal AI with MLX/GGUF |
 | [docs](https://github.com/zenlm/docs) | Documentation and model cards |
-
-## Benchmarks
-
-| Model | MMLU | HumanEval | GSM8K | MT-Bench |
-|-------|------|-----------|-------|----------|
-| Zen-70B | 82.3 | 71.2 | 85.4 | 8.9 |
-| Zen-32B | 78.1 | 65.8 | 79.2 | 8.4 |
-| Zen-7B | 68.5 | 52.4 | 62.1 | 7.8 |
-| Zen-3B | 58.2 | 38.6 | 48.3 | 7.1 |
 
 ## Related Organizations
 
@@ -66,7 +71,7 @@ model = AutoModelForCausalLM.from_pretrained("zenlm/zen-7b")
 
 - [zenlm.org](https://zenlm.org) — Website
 - [huggingface.co/zenlm](https://huggingface.co/zenlm) — Models on Hugging Face
-- [docs.zenlm.ai](https://docs.zenlm.ai) — Documentation
+- [github.com/zenlm/docs](https://github.com/zenlm/docs) — Documentation
 
 Apache 2.0 for code, model-specific licenses for weights.
 
