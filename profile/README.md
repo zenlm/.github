@@ -53,25 +53,36 @@ model = AutoModelForCausalLM.from_pretrained("zenlm/zen4-pro")
 
 | Project | Description |
 |---------|-------------|
-| [zen](https://github.com/zenlm/zen) | Zen AI model family — efficient models for edge and cloud |
-| [engine](https://github.com/zenlm/engine) | High-performance inference engine — Rust/MLX/GGUF |
+| [zen](https://github.com/zenlm/zen) | Zen AI model family -- efficient models for edge and cloud |
+| [engine](https://github.com/zenlm/engine) | High-performance inference engine -- Rust/MLX/GGUF |
 | [gym](https://github.com/zenlm/gym) | Unified fine-tuning for 100+ LLMs and VLMs |
-| [zen-omni](https://github.com/zenlm/zen-omni) | Zen-Omni 30B — hypermodal AI with MLX/GGUF |
+| [zen-omni](https://github.com/zenlm/zen-omni) | Zen-Omni 30B -- hypermodal AI with MLX/GGUF |
 | [docs](https://github.com/zenlm/docs) | Documentation and model cards |
 
-## Related Organizations
+## Ecosystem
 
-| Organization | Focus |
-|--------------|-------|
-| [Hanzo AI](https://github.com/hanzoai) | AI infrastructure — LLM gateway, MCP, agents |
-| [Lux Network](https://github.com/luxfi) | Post-quantum blockchain, FHE, cross-chain |
-| [Zoo Labs](https://github.com/zoo-labs) | Open AI research network (501c3) |
+| Organization | Focus | Link |
+|---|---|---|
+| **Hanzo AI** | AI infrastructure, LLM gateway, MCP tools | [github.com/hanzoai](https://github.com/hanzoai) |
+| **Lux Network** | Post-quantum blockchain, FHE, multi-consensus | [github.com/luxfi](https://github.com/luxfi) |
+| **Zen LM** | Frontier language models, 600M-480B parameters | [github.com/zenlm](https://github.com/zenlm) |
+| **Zoo Labs** | Open AI research, DeSci, 501(c)(3) foundation | [github.com/zoo-labs](https://github.com/zoo-labs) |
+| **Lux FHE** | Fully homomorphic encryption research + SDK | [github.com/luxfhe](https://github.com/luxfhe) |
+| **Lux C++** | High-performance C++ libraries | [github.com/luxcpp](https://github.com/luxcpp) |
+| **Hanzo KMS** | Enterprise secret management | [github.com/hanzokms](https://github.com/hanzokms) |
+| **Hanzo ID** | Identity, OAuth2/OIDC, WebAuthn | [github.com/hanzoid](https://github.com/hanzoid) |
+
+### Links
+- [Papers](https://github.com/luxfi/papers) -- 329+ research papers
+- [Stats](https://zeekay.github.io/stats/) -- 38,906+ commits, 59M net LOC
+- [Security](https://github.com/luxfi/node/blob/main/SECURITY.md) -- cryptographic audit trail
+- [History](https://github.com/luxfi/node/blob/main/HISTORY.md) -- 2008-2026 timeline
 
 ## Resources
 
-- [zenlm.org](https://zenlm.org) — Website
-- [huggingface.co/zenlm](https://huggingface.co/zenlm) — Models on Hugging Face
-- [github.com/zenlm/docs](https://github.com/zenlm/docs) — Documentation
+- [zenlm.org](https://zenlm.org) -- Website
+- [huggingface.co/zenlm](https://huggingface.co/zenlm) -- Models on Hugging Face
+- [github.com/zenlm/docs](https://github.com/zenlm/docs) -- Documentation
 
 Apache 2.0 for code, model-specific licenses for weights.
 
