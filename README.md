@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt=".github" width="880"></p>
+
   # Zen LM 🌍
 
   **Next-Generation AI for Humanity** • Local • Private • Free • Sustainable
