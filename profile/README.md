@@ -2,8 +2,6 @@
 
 Frontier language models from 600M to 480B parameters. Open-weight models optimized for edge devices through cloud-scale deployments, built on the Zen architecture with efficient inference via Rust, MLX, and GGUF.
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
 Zen LM develops state-of-the-art language models spanning ten modalities from 600M (embedded) to 480B (frontier research). All models use the Zen architecture with RoPE embeddings, SwiGLU activation, grouped-query attention, and Flash Attention 2. Available through the Hanzo LLM Gateway, Hugging Face, vLLM, and local inference via MLX/GGUF.
 
 ## Quick Start
