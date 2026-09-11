@@ -2,12 +2,12 @@
 
 Frontier language models from 600M to 480B parameters. Open-weight models optimized for edge devices through cloud-scale deployments, built on the Zen architecture with efficient inference via Rust, MLX, and GGUF.
 
-Zen LM develops state-of-the-art language models spanning ten modalities from 600M (embedded) to 480B (frontier research). All models use the Zen architecture with RoPE embeddings, SwiGLU activation, grouped-query attention, and Flash Attention 2. Available through the Hanzo LLM Gateway, Hugging Face, vLLM, and local inference via MLX/GGUF.
+Zen LM develops state-of-the-art language models spanning ten modalities from 600M (embedded) to 480B (frontier research). All models use the Zen architecture with RoPE embeddings, SwiGLU activation, grouped-query attention, and Flash Attention 2. Available through the Hanzo API, Hugging Face, vLLM, and local inference via MLX/GGUF.
 
 ## Quick Start
 
 ```python
-# Using Hanzo LLM Gateway
+# Using the Hanzo API
 from hanzo import Client
 
 client = Client()
@@ -61,7 +61,7 @@ model = AutoModelForCausalLM.from_pretrained("zenlm/zen4-pro")
 
 | Organization | Focus | Link |
 |---|---|---|
-| **Hanzo AI** | AI infrastructure, LLM gateway, MCP tools | [github.com/hanzoai](https://github.com/hanzoai) |
+| **Hanzo AI** | The Open AI Cloud: Enso, agents, MCP, inference | [github.com/hanzoai](https://github.com/hanzoai) |
 | **Lux Network** | Post-quantum blockchain, FHE, multi-consensus | [github.com/luxfi](https://github.com/luxfi) |
 | **Zen LM** | Frontier language models, 600M-480B parameters | [github.com/zenlm](https://github.com/zenlm) |
 | **Zoo Labs** | Open AI research, DeSci, 501(c)(3) foundation | [github.com/zoo-labs](https://github.com/zoo-labs) |
